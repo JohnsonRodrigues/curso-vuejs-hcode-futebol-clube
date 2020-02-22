@@ -1,28 +1,70 @@
 <template>
+
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <HcodeHeader
+      @select-championship="changeChampionship"
+      @change-component="changeComponent"
+    />
+
+    <HcodeSection
+      :championship="championship"
+      :current-component="currentSectionComponent"
+    />
+    
+    <HcodeFooter />
+
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HcodeHeader from './components/HcodeHeader'
+import HcodeFooter from './components/HcodeFooter'
+import HcodeSection from './components/HcodeSection'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HcodeHeader,
+    HcodeFooter,
+    HcodeSection
+  },
+  data() {
+    return {
+      championship: 'Campeonato Brasileiro',
+      currentSectionComponent: 'HcodeSectionBanner'
+    }
+  },
+  methods: {
+    changeChampionship(value) {
+
+      this.championship = value;
+
+    },
+    changeComponent(value) {
+
+      let component;
+      
+      switch (value) {
+        case 'home':
+        default:
+          component = 'HcodeSectionBanner';
+
+        break;
+
+        case 'news':
+            component = 'HcodeSectionNews'
+        break;
+      }
+
+      this.currentSectionComponent = component;
+
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap')
 </style>
