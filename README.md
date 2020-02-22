@@ -1,24 +1,4 @@
-# hcode-futebol-clube
+# curso-vuejs-hcode-futebol-clube
+Este repositório contém o projeto da Hcode Futebol Clube, desenvolvido no treinamento Vue.js - Curso Completo
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Execute npm install e npm run serve para iniciar o servidor
