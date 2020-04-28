@@ -1,6 +1,6 @@
 <template>
     
-    <section>
+    <section class="section-news">
 
         <div class="container">
 
@@ -13,7 +13,7 @@
             >
                 
                 <template #title>
-                    <h2>{{ notice.title }}</h2>
+                    <router-link :to="{ name: 'notice', params: {idnotice: notice.id} }" tag="h2">{{ notice.title }}</router-link>
                 </template>
                 
                 <p>{{ notice.content | truncate(200) }}</p>
@@ -43,12 +43,15 @@ export default {
         ...mapGetters({
             news: 'getNews'
         })
+    },
+    methods: {
+        
     }
 }
 </script>
 
-<style scoped>
-section {
+<style>
+.section-news {
     padding: 50px 0;
     margin-top: 25px;
     background-color: #F37520;

@@ -7,9 +7,7 @@
       @change-component="changeComponent"
     />
 
-    <HcodeSection
-      :current-component="currentSectionComponent"
-    />
+    <HcodeSection />
     
     <HcodeFooter />
 
@@ -32,7 +30,7 @@ export default {
   },
   data() {
     return {
-      currentSectionComponent: 'HcodeSectionBanner'
+      
     }
   },
   methods: { 
